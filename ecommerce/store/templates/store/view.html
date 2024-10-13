@@ -1,0 +1,22 @@
+{% extends 'store/main.html' %}
+{% load static %}
+{% block content %}
+        <div class="row">
+            <p>
+            <img src="{{products.imageURL}}">,<img src="{{ products.imageq.url }}">,<img src="{{ products.imagev.url }}">,<img src="{{ products.imagew.url }}">
+            </p>
+        </div>
+                <div class="box-element product">
+                    <h1><strong>{{products.name}}</strong></h1>
+                    
+                    
+                    <hr>
+                    <p>{{products.description}}</p>
+
+                    <button data-product="{{products.id}}" data-action="add" class="btn btn-outline-secondary add-btn update-cart">Add to Cart</button>
+                    <button onclick="window.location.href='{% url 'store' %}';">BACK TO HOME</button>
+                    
+                    <h4 style="display: inline-block; float: right"><strong>RS.{{products.price}}/-</strong></h4>
+    </div>
+
+{% endblock content %}
